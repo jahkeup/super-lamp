@@ -1,8 +1,8 @@
-mtree -k flags,gid,mode,nlink,size,link,time,uid,sha256digest,gname,uname -L -c -p a > a.mtree
+mtree -k flags,gid,mode,nlink,size,link,time,uid,sha256digest,gname,uname -L  -c -p a > a.mtree
      1 a.mtree> #	   user: jake
      2 a.mtree> #	machine: Jacobs-MacBook-Pro.local
      3 a.mtree> #	   tree: /Users/jake/example-tree/a
-     4 a.mtree> #	   date: Thu Feb 23 20:19:38 2023
+     4 a.mtree> #	   date: Fri Feb 24 10:16:38 2023
      5 a.mtree> 
      6 a.mtree> # .
      7 a.mtree> /set type=file uname=jake uid=501 gname=staff gid=20 mode=0755 nlink=1 flags=none
@@ -41,11 +41,11 @@ mtree -k flags,gid,mode,nlink,size,link,time,uid,sha256digest,gname,uname -L -c 
     40 a.mtree> ..
     41 a.mtree> 
 
-mtree -k flags,gid,mode,nlink,size,link,time,uid,sha256digest,gname,uname -L -c -p b > b.mtree
+mtree -k flags,gid,mode,nlink,size,link,time,uid,sha256digest,gname,uname -L  -c -p b > b.mtree
      1 b.mtree> #	   user: jake
      2 b.mtree> #	machine: Jacobs-MacBook-Pro.local
      3 b.mtree> #	   tree: /Users/jake/example-tree/b
-     4 b.mtree> #	   date: Thu Feb 23 20:19:38 2023
+     4 b.mtree> #	   date: Fri Feb 24 10:16:38 2023
      5 b.mtree> 
      6 b.mtree> # .
      7 b.mtree> /set type=file uname=jake uid=501 gname=staff gid=20 mode=0755 nlink=1 flags=none
@@ -119,7 +119,7 @@ mtree -k flags,gid,mode,nlink,size,link,time,uid,sha256digest,gname,uname -L -c 
     75 b.mtree> ..
     76 b.mtree> 
 
-mtree -k flags,gname,uname,link,mode,sha256digest -P -f a.mtree -f b.mtree
+mtree -k flags,gname,uname,link,mode,sha256digest -P  -f a.mtree -f b.mtree
 	.some-file-at-root file gid=20 gname=staff mode=644 nlink=1 size=0 time=1677197948.000000000 uid=501 uname=jake sha256digest=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 flags=none
 var link gid=20 gname=staff nlink=1 size=7 time=1677199792.000000000 uid=501 uname=jake flags=none
 	private/var/tmp dir gid=20 gname=staff mode=755 nlink=2 size=64 time=1677199818.000000000 uid=501 uname=jake flags=none
@@ -130,4 +130,4 @@ var link gid=20 gname=staff nlink=1 size=7 time=1677199792.000000000 uid=501 una
 	usr/local/etc/bar.conf file gid=20 gname=staff mode=644 nlink=1 size=5 time=1677197843.000000000 uid=501 uname=jake sha256digest=53252c498038d27d95cc8b6e2837384af6a2d437a2dd4f148127890655ff301e flags=none
 	var/tmp dir gid=20 gname=staff mode=755 nlink=2 size=64 time=1677199818.000000000 uid=501 uname=jake flags=none
 	var dir gid=20 gname=staff mode=755 nlink=3 size=96 time=1677199818.000000000 uid=501 uname=jake flags=none
-make[1]: *** [example] Error 2
+make[2]: *** [example] Error 2

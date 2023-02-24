@@ -1,0 +1,97 @@
+mtree -k flags,gid,mode,nlink,size,link,time,uid,sha256digest,gname,uname -L -n -c -p a > a.mtree
+     1 a.mtree> 
+     2 a.mtree> /set type=file uname=jake uid=501 gname=staff gid=20 mode=0755 nlink=1 flags=none
+     3 a.mtree> .               type=dir nlink=4 size=128 time=1677199792.000000000
+     4 a.mtree>     var         type=link size=7 time=1677199792.000000000 link=usr/var
+     5 a.mtree> 
+     6 a.mtree> usr             type=dir nlink=3 size=96 time=1677197782.000000000
+     7 a.mtree> 
+     8 a.mtree> local           type=dir nlink=4 size=128 time=1677197823.000000000
+     9 a.mtree> 
+    10 a.mtree> bin             type=dir nlink=3 size=96 time=1677197796.000000000
+    11 a.mtree>     foo.sh      size=45 time=1677197796.000000000 \
+    12 a.mtree>                 sha256digest=2f799d995e7bafa122716159d30a98ee121db0da2a771de287f5fe087ef5f56e
+    13 a.mtree> ..
+    14 a.mtree> 
+    15 a.mtree> 
+    16 a.mtree> /set type=file uname=jake uid=501 gname=staff gid=20 mode=0644 nlink=1 flags=none
+    17 a.mtree> etc             type=dir mode=0755 nlink=3 size=96 \
+    18 a.mtree>                 time=1677197826.000000000
+    19 a.mtree>     foo.conf    size=3 time=1677197826.000000000 \
+    20 a.mtree>                 sha256digest=98ea6e4f216f2fb4b69fff9b3a44842c38686ca685f3f55dc48c5d3fb1107be4
+    21 a.mtree> ..
+    22 a.mtree> 
+    23 a.mtree> ..
+    24 a.mtree> 
+    25 a.mtree> ..
+    26 a.mtree> 
+    27 a.mtree> ..
+    28 a.mtree> 
+
+mtree -k flags,gid,mode,nlink,size,link,time,uid,sha256digest,gname,uname -L -n -c -p b > b.mtree
+     1 b.mtree> 
+     2 b.mtree> /set type=file uname=jake uid=501 gname=staff gid=20 mode=0755 nlink=1 flags=none
+     3 b.mtree> .               type=dir nlink=6 size=192 time=1677199810.000000000
+     4 b.mtree>     .some-file-at-root \
+     5 b.mtree>                 mode=0644 size=0 time=1677197948.000000000 \
+     6 b.mtree>                 sha256digest=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+     7 b.mtree> 
+     8 b.mtree> private         type=dir nlink=3 size=96 time=1677199818.000000000
+     9 b.mtree> 
+    10 b.mtree> var             type=dir nlink=3 size=96 time=1677199818.000000000
+    11 b.mtree> 
+    12 b.mtree> tmp             type=dir nlink=2 size=64 time=1677199818.000000000
+    13 b.mtree> ..
+    14 b.mtree> 
+    15 b.mtree> ..
+    16 b.mtree> 
+    17 b.mtree> ..
+    18 b.mtree> 
+    19 b.mtree> 
+    20 b.mtree> usr             type=dir nlink=3 size=96 time=1677197834.000000000
+    21 b.mtree> 
+    22 b.mtree> local           type=dir nlink=4 size=128 time=1677197834.000000000
+    23 b.mtree> 
+    24 b.mtree> bin             type=dir nlink=3 size=96 time=1677198440.000000000
+    25 b.mtree>     foo.sh      size=195 time=1677198440.000000000 \
+    26 b.mtree>                 sha256digest=0849247d438cd1247478c3c35d1f65b0aeb8f94c829eae87d6e96a1d94d6a894
+    27 b.mtree> ..
+    28 b.mtree> 
+    29 b.mtree> 
+    30 b.mtree> /set type=file uname=jake uid=501 gname=staff gid=20 mode=0644 nlink=1 flags=none
+    31 b.mtree> etc             type=dir mode=0755 nlink=4 size=128 \
+    32 b.mtree>                 time=1677197843.000000000
+    33 b.mtree>     bar.conf    size=5 time=1677197843.000000000 \
+    34 b.mtree>                 sha256digest=53252c498038d27d95cc8b6e2837384af6a2d437a2dd4f148127890655ff301e
+    35 b.mtree>     foo.conf    size=3 time=1677197834.000000000 \
+    36 b.mtree>                 sha256digest=98ea6e4f216f2fb4b69fff9b3a44842c38686ca685f3f55dc48c5d3fb1107be4
+    37 b.mtree> ..
+    38 b.mtree> 
+    39 b.mtree> ..
+    40 b.mtree> 
+    41 b.mtree> ..
+    42 b.mtree> 
+    43 b.mtree> 
+    44 b.mtree> /set type=file uname=jake uid=501 gname=staff gid=20 mode=0755 nlink=1 flags=none
+    45 b.mtree> var             type=dir nlink=3 size=96 time=1677199818.000000000
+    46 b.mtree> 
+    47 b.mtree> tmp             type=dir nlink=2 size=64 time=1677199818.000000000
+    48 b.mtree> ..
+    49 b.mtree> 
+    50 b.mtree> ..
+    51 b.mtree> 
+    52 b.mtree> ..
+    53 b.mtree> 
+
+mtree -k flags,gname,uname,link,mode,sha256digest -P -n -f a.mtree -f b.mtree
+	.some-file-at-root file gid=20 gname=staff mode=644 nlink=1 size=0 time=1677197948.000000000 uid=501 uname=jake sha256digest=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 flags=none
+var link gid=20 gname=staff nlink=1 size=7 time=1677199792.000000000 uid=501 uname=jake flags=none
+	private/var/tmp dir gid=20 gname=staff mode=755 nlink=2 size=64 time=1677199818.000000000 uid=501 uname=jake flags=none
+	private/var dir gid=20 gname=staff mode=755 nlink=3 size=96 time=1677199818.000000000 uid=501 uname=jake flags=none
+	private dir gid=20 gname=staff mode=755 nlink=3 size=96 time=1677199818.000000000 uid=501 uname=jake flags=none
+		usr/local/bin/foo.sh file size=45 time=1677197796.000000000 sha256digest=2f799d995e7bafa122716159d30a98ee121db0da2a771de287f5fe087ef5f56e
+		usr/local/bin/foo.sh file size=195 time=1677198440.000000000 sha256digest=0849247d438cd1247478c3c35d1f65b0aeb8f94c829eae87d6e96a1d94d6a894
+	usr/local/etc/bar.conf file gid=20 gname=staff mode=644 nlink=1 size=5 time=1677197843.000000000 uid=501 uname=jake sha256digest=53252c498038d27d95cc8b6e2837384af6a2d437a2dd4f148127890655ff301e flags=none
+	var/tmp dir gid=20 gname=staff mode=755 nlink=2 size=64 time=1677199818.000000000 uid=501 uname=jake flags=none
+	var dir gid=20 gname=staff mode=755 nlink=3 size=96 time=1677199818.000000000 uid=501 uname=jake flags=none
+make[2]: *** [example] Error 2
