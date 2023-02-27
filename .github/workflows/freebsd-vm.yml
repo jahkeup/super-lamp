@@ -1,0 +1,14 @@
+name: FreeBSD
+on: [push]
+jobs:
+  freebsd:
+    runs-on: macos-12
+    name:
+    steps:
+    - uses: actions/checkout@v3
+    - name: run
+      uses: vmactions/freebsd-vm@v0
+      with:
+        usesh: true
+        run: |
+          make all
