@@ -36,3 +36,6 @@ clean:
 
 a b:
 	tar -xf trees.tar $@
+
+trees.tar:
+	tar -cf $@ a b

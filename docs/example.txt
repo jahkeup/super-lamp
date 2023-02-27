@@ -2,50 +2,74 @@ mtree -k flags,gid,mode,nlink,size,link,time,uid,sha256digest,gname,uname -L  -c
      1 a.mtree> #	   user: jake
      2 a.mtree> #	machine: Jacobs-MacBook-Pro.local
      3 a.mtree> #	   tree: /Users/jake/example-tree/a
-     4 a.mtree> #	   date: Fri Feb 24 10:16:38 2023
+     4 a.mtree> #	   date: Mon Feb 27 10:48:52 2023
      5 a.mtree> 
      6 a.mtree> # .
      7 a.mtree> /set type=file uname=jake uid=501 gname=staff gid=20 mode=0755 nlink=1 flags=none
-     8 a.mtree> .               type=dir nlink=4 size=128 time=1677199792.000000000
+     8 a.mtree> .               type=dir nlink=5 size=160 time=1677523658.710589142
      9 a.mtree>     var         type=link size=7 time=1677199792.000000000 link=usr/var
     10 a.mtree> 
-    11 a.mtree> # ./usr
-    12 a.mtree> usr             type=dir nlink=3 size=96 time=1677197782.000000000
+    11 a.mtree> # ./Library
+    12 a.mtree> Library         type=dir nlink=3 size=96 time=1677523658.710679809
     13 a.mtree> 
-    14 a.mtree> # ./usr/local
-    15 a.mtree> local           type=dir nlink=4 size=128 time=1677197823.000000000
+    14 a.mtree> # ./Library/Frameworks
+    15 a.mtree> Frameworks      type=dir nlink=3 size=96 time=1677523658.710731642
     16 a.mtree> 
-    17 a.mtree> # ./usr/local/bin
-    18 a.mtree> bin             type=dir nlink=3 size=96 time=1677197796.000000000
-    19 a.mtree>     foo.sh      size=45 time=1677197796.000000000 \
-    20 a.mtree>                 sha256digest=2f799d995e7bafa122716159d30a98ee121db0da2a771de287f5fe087ef5f56e
-    21 a.mtree> # ./usr/local/bin
-    22 a.mtree> ..
-    23 a.mtree> 
-    24 a.mtree> 
-    25 a.mtree> # ./usr/local/etc
-    26 a.mtree> /set type=file uname=jake uid=501 gname=staff gid=20 mode=0644 nlink=1 flags=none
-    27 a.mtree> etc             type=dir mode=0755 nlink=3 size=96 \
-    28 a.mtree>                 time=1677197826.000000000
-    29 a.mtree>     foo.conf    size=3 time=1677197826.000000000 \
-    30 a.mtree>                 sha256digest=98ea6e4f216f2fb4b69fff9b3a44842c38686ca685f3f55dc48c5d3fb1107be4
-    31 a.mtree> # ./usr/local/etc
-    32 a.mtree> ..
+    17 a.mtree> # ./Library/Frameworks/Foo Helper.framework
+    18 a.mtree> /set type=file uname=jake uid=501 gname=staff gid=20 mode=0644 nlink=1 flags=none
+    19 a.mtree> Foo\040Helper.framework \
+    20 a.mtree>                 type=dir mode=0755 nlink=3 size=96 \
+    21 a.mtree>                 time=1677523675.960635055
+    22 a.mtree>     empty-file  size=0 time=1677523675.960625263 \
+    23 a.mtree>                 sha256digest=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    24 a.mtree> # ./Library/Frameworks/Foo Helper.framework
+    25 a.mtree> ..
+    26 a.mtree> 
+    27 a.mtree> # ./Library/Frameworks
+    28 a.mtree> ..
+    29 a.mtree> 
+    30 a.mtree> # ./Library
+    31 a.mtree> ..
+    32 a.mtree> 
     33 a.mtree> 
-    34 a.mtree> # ./usr/local
-    35 a.mtree> ..
-    36 a.mtree> 
-    37 a.mtree> # ./usr
-    38 a.mtree> ..
-    39 a.mtree> 
-    40 a.mtree> ..
-    41 a.mtree> 
+    34 a.mtree> # ./usr
+    35 a.mtree> /set type=file uname=jake uid=501 gname=staff gid=20 mode=0755 nlink=1 flags=none
+    36 a.mtree> usr             type=dir nlink=3 size=96 time=1677197782.000000000
+    37 a.mtree> 
+    38 a.mtree> # ./usr/local
+    39 a.mtree> local           type=dir nlink=4 size=128 time=1677197823.000000000
+    40 a.mtree> 
+    41 a.mtree> # ./usr/local/bin
+    42 a.mtree> bin             type=dir nlink=3 size=96 time=1677197796.000000000
+    43 a.mtree>     foo.sh      size=45 time=1677197796.000000000 \
+    44 a.mtree>                 sha256digest=2f799d995e7bafa122716159d30a98ee121db0da2a771de287f5fe087ef5f56e
+    45 a.mtree> # ./usr/local/bin
+    46 a.mtree> ..
+    47 a.mtree> 
+    48 a.mtree> 
+    49 a.mtree> # ./usr/local/etc
+    50 a.mtree> /set type=file uname=jake uid=501 gname=staff gid=20 mode=0644 nlink=1 flags=none
+    51 a.mtree> etc             type=dir mode=0755 nlink=3 size=96 \
+    52 a.mtree>                 time=1677197826.000000000
+    53 a.mtree>     foo.conf    size=3 time=1677197826.000000000 \
+    54 a.mtree>                 sha256digest=98ea6e4f216f2fb4b69fff9b3a44842c38686ca685f3f55dc48c5d3fb1107be4
+    55 a.mtree> # ./usr/local/etc
+    56 a.mtree> ..
+    57 a.mtree> 
+    58 a.mtree> # ./usr/local
+    59 a.mtree> ..
+    60 a.mtree> 
+    61 a.mtree> # ./usr
+    62 a.mtree> ..
+    63 a.mtree> 
+    64 a.mtree> ..
+    65 a.mtree> 
 
 mtree -k flags,gid,mode,nlink,size,link,time,uid,sha256digest,gname,uname -L  -c -p b > b.mtree
      1 b.mtree> #	   user: jake
      2 b.mtree> #	machine: Jacobs-MacBook-Pro.local
      3 b.mtree> #	   tree: /Users/jake/example-tree/b
-     4 b.mtree> #	   date: Fri Feb 24 10:16:38 2023
+     4 b.mtree> #	   date: Mon Feb 27 10:48:52 2023
      5 b.mtree> 
      6 b.mtree> # .
      7 b.mtree> /set type=file uname=jake uid=501 gname=staff gid=20 mode=0755 nlink=1 flags=none
@@ -122,6 +146,10 @@ mtree -k flags,gid,mode,nlink,size,link,time,uid,sha256digest,gname,uname -L  -c
 mtree -k flags,gname,uname,link,mode,sha256digest -P  -f a.mtree -f b.mtree
 	.some-file-at-root file gid=20 gname=staff mode=644 nlink=1 size=0 time=1677197948.000000000 uid=501 uname=jake sha256digest=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 flags=none
 var link gid=20 gname=staff nlink=1 size=7 time=1677199792.000000000 uid=501 uname=jake flags=none
+Library/Frameworks/Foo Helper.framework/empty-file file gid=20 gname=staff mode=644 nlink=1 size=0 time=1677523675.960625263 uid=501 uname=jake sha256digest=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 flags=none
+Library/Frameworks/Foo Helper.framework dir gid=20 gname=staff mode=755 nlink=3 size=96 time=1677523675.960635055 uid=501 uname=jake flags=none
+Library/Frameworks dir gid=20 gname=staff mode=755 nlink=3 size=96 time=1677523658.710731642 uid=501 uname=jake flags=none
+Library dir gid=20 gname=staff mode=755 nlink=3 size=96 time=1677523658.710679809 uid=501 uname=jake flags=none
 	private/var/tmp dir gid=20 gname=staff mode=755 nlink=2 size=64 time=1677199818.000000000 uid=501 uname=jake flags=none
 	private/var dir gid=20 gname=staff mode=755 nlink=3 size=96 time=1677199818.000000000 uid=501 uname=jake flags=none
 	private dir gid=20 gname=staff mode=755 nlink=3 size=96 time=1677199818.000000000 uid=501 uname=jake flags=none
