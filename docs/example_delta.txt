@@ -1,6 +1,6 @@
-Fields: 1  Last field: mtree -k flags,gid,mode,nlink,size,link,time,uid,sha256digest,gname,uname -L  -c -p a > a.mtree
+Fields: 1  Last field: mtree -k flags,gid,mode,nlink,size,link,time,uid,sha256digest,gname,uname -L  -c -p a.tree > a.mtree
 Fields: 0  Last field: 
-Fields: 1  Last field: mtree -k flags,gid,mode,nlink,size,link,time,uid,sha256digest,gname,uname -L  -c -p b > b.mtree
+Fields: 1  Last field: mtree -k flags,gid,mode,nlink,size,link,time,uid,sha256digest,gname,uname -L  -c -p b.tree > b.mtree
 Fields: 0  Last field: 
 Fields: 2  Last field: .some-file-at-root file gid=20 gname=staff mode=644 nlink=1 size=0 time=1677197948.000000000 uid=501 uname=jake sha256digest=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 flags=none
 Fields: 1  Last field: var link gid=20 gname=staff nlink=1 size=7 time=1677199792.000000000 uid=501 uname=jake flags=none

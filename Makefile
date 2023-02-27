@@ -37,17 +37,18 @@ compare: example
 compare-with-numeric-prefix:
 	@make compare | awk -F '\t' '{print "Fields:", NF, "", "Last field:", $$NF}'
 
-%.mtree: %
-	$(MTREE) -c -p $* > $@
+.SUFFIXES: .mtree .tree
+.tree.mtree:
+	$(MTREE) -c -p $< > $@
 	@nl -ba -s ' $@> ' $@ >&2
 	@echo
 
 clean:
-	@rm -rf a.mtree b.mtree a b
+	@rm -rf a.mtree b.mtree a.tree b.tree
 	@rm -f $(wildcard example*.txt)
 
-a b:
+a.tree b.tree:
 	tar -xf trees.tar $@
 
 trees.tar:
-	tar -cf $@ a b
+	tar -cf $@ a.tree b.tree
