@@ -1,0 +1,14 @@
+name: Ubuntu
+on: push
+jobs:
+  ubuntu:
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: deps
+        run: sudo apt install -y mtree-netbsd
+      - name: run
+        run: make all
