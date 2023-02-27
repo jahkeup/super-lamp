@@ -4,14 +4,18 @@ MTREE_EXTRA_FLAGS=
 MTREE = mtree -k $(MTREE_KEYWORDS) -L $(MTREE_EXTRA_FLAGS)
 _MTREE = mtree -k $(MTREE_VERIFY_KEYWORDS) -P $(MTREE_EXTRA_FLAGS)
 
+all:
+	@make clean
+	-make example.txt
+	@make clean
+	-make example_compact.txt
+
 .PHONY: example.txt example_compact.txt
 example.txt:
-	@make clean
-	make example &> $@
+	-make example &> $@
 
 example_compact.txt:
-	@make clean
-	make example MTREE_EXTRA_FLAGS=-n &> $@
+	-make example MTREE_EXTRA_FLAGS=-n &> $@
 
 example: a.mtree b.mtree
 	$(AT)$(_MTREE) -f a.mtree -f b.mtree
@@ -28,7 +32,7 @@ compare-with-numeric-prefix:
 	@echo
 
 clean:
-	@rm -f a.mtree b.mtree example.txt
+	@rm -f a.mtree b.mtree 
 
 a b:
 	tar -xf trees.tar $@
