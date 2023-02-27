@@ -1,0 +1,22 @@
+Fields: 1  Last field: mtree -k flags,gid,mode,nlink,size,link,time,uid,sha256digest,gname,uname -L  -c -p a > a.mtree
+Fields: 0  Last field: 
+Fields: 1  Last field: mtree -k flags,gid,mode,nlink,size,link,time,uid,sha256digest,gname,uname -L  -c -p b > b.mtree
+Fields: 0  Last field: 
+Fields: 2  Last field: .some-file-at-root file gid=20 gname=staff mode=644 nlink=1 size=0 time=1677197948.000000000 uid=501 uname=jake sha256digest=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 flags=none
+Fields: 1  Last field: var link gid=20 gname=staff nlink=1 size=7 time=1677199792.000000000 uid=501 uname=jake flags=none
+Fields: 1  Last field: Library/Frameworks/Foo Helper.framework/empty-file file gid=20 gname=staff mode=644 nlink=1 size=0 time=1677523675.000000000 uid=501 uname=jake sha256digest=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 flags=none
+Fields: 1  Last field: Library/Frameworks/Foo Helper.framework dir gid=20 gname=staff mode=755 nlink=3 size=96 time=1677523675.000000000 uid=501 uname=jake flags=none
+Fields: 1  Last field: Library/Frameworks dir gid=20 gname=staff mode=755 nlink=3 size=96 time=1677523658.000000000 uid=501 uname=jake flags=none
+Fields: 1  Last field: Library dir gid=20 gname=staff mode=755 nlink=3 size=96 time=1677523658.000000000 uid=501 uname=jake flags=none
+Fields: 1  Last field: Users/some-user/Desktop/.DS_Store file gid=20 gname=staff mode=644 nlink=1 size=0 time=1677523868.000000000 uid=501 uname=jake sha256digest=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 flags=none
+Fields: 1  Last field: Users/some-user/Desktop dir gid=20 gname=staff mode=755 nlink=3 size=96 time=1677523868.000000000 uid=501 uname=jake flags=none
+Fields: 1  Last field: Users/some-user dir gid=20 gname=staff mode=755 nlink=3 size=96 time=1677523864.000000000 uid=501 uname=jake flags=none
+Fields: 1  Last field: Users dir gid=20 gname=staff mode=755 nlink=3 size=96 time=1677523864.000000000 uid=501 uname=jake flags=none
+Fields: 2  Last field: private/var/tmp dir gid=20 gname=staff mode=755 nlink=2 size=64 time=1677199818.000000000 uid=501 uname=jake flags=none
+Fields: 2  Last field: private/var dir gid=20 gname=staff mode=755 nlink=3 size=96 time=1677199818.000000000 uid=501 uname=jake flags=none
+Fields: 2  Last field: private dir gid=20 gname=staff mode=755 nlink=3 size=96 time=1677199818.000000000 uid=501 uname=jake flags=none
+Fields: 3  Last field: usr/local/bin/foo.sh file size=45 time=1677197796.000000000 sha256digest=2f799d995e7bafa122716159d30a98ee121db0da2a771de287f5fe087ef5f56e
+Fields: 3  Last field: usr/local/bin/foo.sh file size=195 time=1677198440.000000000 sha256digest=0849247d438cd1247478c3c35d1f65b0aeb8f94c829eae87d6e96a1d94d6a894
+Fields: 2  Last field: usr/local/etc/bar.conf file gid=20 gname=staff mode=644 nlink=1 size=5 time=1677197843.000000000 uid=501 uname=jake sha256digest=53252c498038d27d95cc8b6e2837384af6a2d437a2dd4f148127890655ff301e flags=none
+Fields: 2  Last field: var/tmp dir gid=20 gname=staff mode=755 nlink=2 size=64 time=1677199818.000000000 uid=501 uname=jake flags=none
+Fields: 2  Last field: var dir gid=20 gname=staff mode=755 nlink=3 size=96 time=1677199818.000000000 uid=501 uname=jake flags=none
